@@ -1,0 +1,17 @@
+package com.sharfine.springboot.service;
+
+import com.sharfine.springboot.dao.UserDao;
+import com.sharfine.springboot.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+
+    @Autowired
+    private UserDao userDao;
+
+    public User selectUser(Integer id){
+     return userDao.getUserById(id);
+    }
+}
